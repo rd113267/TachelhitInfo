@@ -1,118 +1,85 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Home from './Home';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
+import WhatsApp from './WhatsApp';
+import {colors} from './constants';
+import Video from './Video';
+import Documents from './Documents';
+import Audio from './Audio';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const Tab = createBottomTabNavigator();
 
-declare const global: {HermesInternal: null | {}};
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: colors.button,
+    //accent: colors.secondary,
+  },
+};
 
 const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.tsx</Text> to change
-                this screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes تاشلحيت ءينفو </Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+    <PaperProvider theme={theme}>
+      <NavigationContainer>
+        <Tab.Navigator
+          tabBarOptions={{
+            activeTintColor: colors.buttonHover,
+            inactiveTintColor: colors.button,
+            showLabel: false,
+          }}>
+          <Tab.Screen
+            options={() => ({
+              tabBarIcon: ({focused, color, size}) => {
+                return <Icon name="home" size={size} color={color} />;
+              },
+            })}
+            name="Home"
+            component={Home}
+          />
+          <Tab.Screen
+            options={(route) => ({
+              tabBarIcon: ({focused, color, size}) => (
+                <Icon name="headphones" size={size} color={color} />
+              ),
+            })}
+            name="Audio"
+            component={Audio}
+          />
+          <Tab.Screen
+            options={(route) => ({
+              tabBarIcon: ({focused, color, size}) => (
+                <Icon name="file-document" size={size} color={color} />
+              ),
+            })}
+            name="Documents"
+            component={Documents}
+          />
+          <Tab.Screen
+            options={(route) => ({
+              tabBarIcon: ({focused, color, size}) => (
+                <Icon name="video" size={size} color={color} />
+              ),
+            })}
+            name="Video"
+            component={Video}
+          />
+          <Tab.Screen
+            options={(route) => ({
+              tabBarIcon: ({focused, color, size}) => (
+                <Icon name="whatsapp" size={size} color={color} />
+              ),
+            })}
+            name="WhatsApp"
+            component={WhatsApp}
+          />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </PaperProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
 
 export default App;
