@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* TachelhitInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TachelhitInfoTests.m */; };
-		0A300AC824E5DB35004E715D /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A300AC624E5DB35004E715D /* MaterialCommunityIcons.ttf */; };
-		0A300AC924E5DB35004E715D /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A300AC724E5DB35004E715D /* MaterialIcons.ttf */; };
 		0A300ACB24E87EAD004E715D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A300ACA24E87EAD004E715D /* GoogleService-Info.plist */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -347,8 +345,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				0A300AC824E5DB35004E715D /* MaterialCommunityIcons.ttf in Resources */,
-				0A300AC924E5DB35004E715D /* MaterialIcons.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				E52C264853B948DCAF564ADC /* TamazightTifinaghe.ttf in Resources */,
 				1EC832CE49094B6284B20498 /* TraditionalArabic.ttf in Resources */,
@@ -715,7 +711,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tachelhitinfo;
 				PRODUCT_NAME = "tachelhit info";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -737,7 +733,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tachelhitinfo;
 				PRODUCT_NAME = "tachelhit info";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
