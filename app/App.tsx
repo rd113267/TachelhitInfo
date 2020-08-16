@@ -1,20 +1,21 @@
 import React from 'react';
 import {NavigationContainer, DrawerActions} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createStackNavigator} from '@react-navigation/stack';
-import Home from './Home';
+import Home from './components/Home';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
-import WhatsApp from './WhatsApp';
+import WhatsApp from './components/WhatsApp';
 import {colors} from './constants';
-import Video from './Video';
-import Documents from './Documents';
-import Audio from './Audio';
-import Injil from './Injil';
+import Injil from './components/Injil';
 import {TouchableOpacity} from 'react-native';
-
-const Tab = createBottomTabNavigator();
+import Imurign from './components/Imurign';
+import Iseqsitn from './components/Iseqsitn';
+import Tugga from './components/Tugga';
+import Alemmud from './components/Alemmud';
+import Arratn from './components/Arratn';
+import Fidyu from './components/Fidyu';
+import Izdayn from './components/Izdayn';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -33,6 +34,13 @@ function MyDrawer() {
     <Drawer.Navigator>
       <Drawer.Screen name="Takat" component={Home} />
       <Drawer.Screen name="Injil" component={Injil} />
+      <Drawer.Screen name="Imurign" component={Imurign} />
+      <Drawer.Screen name="Iseqsitn" component={Iseqsitn} />
+      <Drawer.Screen name="Tugga" component={Tugga} />
+      <Drawer.Screen name="Alemmud" component={Alemmud} />
+      <Drawer.Screen name="Arratn" component={Arratn} />
+      <Drawer.Screen name="Fidyu" component={Fidyu} />
+      <Drawer.Screen name="Izdayn" component={Izdayn} />
       <Drawer.Screen name="sawl-agh-d s-watsapp" component={WhatsApp} />
     </Drawer.Navigator>
   );
@@ -57,7 +65,7 @@ const App = () => {
                   <Icon
                     name="menu"
                     color="#fff"
-                    size={30}
+                    size={35}
                     style={{padding: 10}}
                   />
                 </TouchableOpacity>

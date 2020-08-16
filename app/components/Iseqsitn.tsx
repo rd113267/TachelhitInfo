@@ -1,19 +1,17 @@
 import React from 'react';
 import {View, Text, ImageBackground} from 'react-native';
-import globalStyles from './styles/globalStyles';
+import globalStyles from '../styles/globalStyles';
 
-const Injil = () => {
+const Iseqsitn = () => {
   return (
     <ImageBackground
       style={globalStyles.imgBackground}
       resizeMode="cover"
-      source={require('./images/background.png')}>
+      source={require('../images/background.png')}>
       <View style={globalStyles.overlay} />
-      <View>
-        <Text />
-      </View>
+      <Text />
     </ImageBackground>
   );
 };
 
-export default Injil;
+export default Iseqsitn;

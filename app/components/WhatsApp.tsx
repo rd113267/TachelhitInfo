@@ -7,7 +7,7 @@ import {
   Alert,
   Linking,
 } from 'react-native';
-import globalStyles from './styles/globalStyles';
+import globalStyles from '../styles/globalStyles';
 import {Button} from 'react-native-paper';
 
 const WhatsApp = () => {
@@ -40,7 +40,7 @@ const WhatsApp = () => {
     <ImageBackground
       style={globalStyles.imgBackground}
       resizeMode="cover"
-      source={require('./images/background.png')}>
+      source={require('../images/background.png')}>
       <View style={globalStyles.overlay} />
       <SafeAreaView style={{flex: 1, justifyContent: 'center', margin: 20}}>
         <Button
