@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* TachelhitInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TachelhitInfoTests.m */; };
+		0A17561C24EF01E2005FA63D /* TraditionalArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A17561B24EF01E2005FA63D /* TraditionalArabic-Bold.ttf */; };
 		0A300ACB24E87EAD004E715D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A300ACA24E87EAD004E715D /* GoogleService-Info.plist */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -45,6 +46,7 @@
 		00E356EE1AD99517003FC87E /* TachelhitInfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TachelhitInfoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* TachelhitInfoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TachelhitInfoTests.m; sourceTree = "<group>"; };
+		0A17561B24EF01E2005FA63D /* TraditionalArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "TraditionalArabic-Bold.ttf"; path = "../assets/fonts/TraditionalArabic-Bold.ttf"; sourceTree = "<group>"; };
 		0A300AC624E5DB35004E715D /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		0A300AC724E5DB35004E715D /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		0A300ACA24E87EAD004E715D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				0A17561B24EF01E2005FA63D /* TraditionalArabic-Bold.ttf */,
 				0A300ACA24E87EAD004E715D /* GoogleService-Info.plist */,
 				0A300AC624E5DB35004E715D /* MaterialCommunityIcons.ttf */,
 				0A300AC724E5DB35004E715D /* MaterialIcons.ttf */,
@@ -345,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				0A17561C24EF01E2005FA63D /* TraditionalArabic-Bold.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				E52C264853B948DCAF564ADC /* TamazightTifinaghe.ttf in Resources */,
 				1EC832CE49094B6284B20498 /* TraditionalArabic.ttf in Resources */,

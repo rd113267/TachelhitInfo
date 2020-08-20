@@ -51,7 +51,7 @@ const App = () => {
     <PaperProvider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen
+          {/* <Stack.Screen
             name="Drawer"
             component={MyDrawer}
             options={({navigation}) => ({
@@ -70,6 +70,13 @@ const App = () => {
                   />
                 </TouchableOpacity>
               ),
+            })}
+          /> */}
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={({navigation}) => ({
+              headerShown: false,
             })}
           />
         </Stack.Navigator>
