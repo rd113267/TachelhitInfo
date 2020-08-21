@@ -1,9 +1,9 @@
 import React from 'react';
 import {ImageBackground} from 'react-native';
 import WebView from 'react-native-webview';
-import {JESUS_FILM_URI} from '../constants';
+import {MAYLLI_URI} from '../constants';
 
-const Fidyu = () => {
+const Maylli = () => {
   return (
     <ImageBackground
       resizeMode="cover"
@@ -11,17 +11,16 @@ const Fidyu = () => {
       style={{flex: 1}}>
       <WebView
         style={{
-          flex: 1,
           backgroundColor: 'transparent',
-          marginTop: '50%',
+          height: 50
         }}
         allowsFullscreenVideo
         javaScriptEnabled
         originWhitelist={['*']}
-        source={{uri: JESUS_FILM_URI}}
+        source={{uri: MAYLLI_URI}}
       />
     </ImageBackground>
   );
 };
 
-export default Fidyu;
+export default Maylli;
