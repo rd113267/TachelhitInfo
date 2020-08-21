@@ -3,12 +3,7 @@ import Video from 'react-native-video';
 import AudioProps from '../../types/Audio';
 import {Alert} from 'react-native';
 
-const Audio: FunctionComponent<AudioProps> = ({
-  paused,
-  uri,
-
-  onBuffer,
-}) => {
+const Audio: FunctionComponent<AudioProps> = ({paused, uri, onBuffer}) => {
   return (
     <Video
       paused={paused}
