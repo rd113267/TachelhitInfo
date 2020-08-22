@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { colors } from '../constants';
 
 export default StyleSheet.create({
   title: {
@@ -23,6 +24,8 @@ export default StyleSheet.create({
   },
   buttonLabel: {
     fontSize: 12,
+    color: colors.gold,
+    fontWeight: 'bold',
   },
 
   arabicTitle: {

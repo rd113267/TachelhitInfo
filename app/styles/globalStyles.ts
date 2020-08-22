@@ -17,7 +17,7 @@ export default StyleSheet.create({
     top: 0,
     right: 0,
     bottom: 0,
-    opacity: 0.3,
+    opacity: 0,
     backgroundColor: 'black',
   },
   imgBackground: {

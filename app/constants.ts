@@ -1,6 +1,6 @@
 export const colors = {
-  button: '#1B6481',
-  buttonHover: '#73AFC8',
+  button: '#dc3832',
+  gold: 'gold',
 };
 
 export const ROOT_URL = 'https://www.tachelhit.info/';

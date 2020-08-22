@@ -20,7 +20,7 @@ const theme = {
   colors: {
     ...DefaultTheme.colors,
     primary: colors.button,
-    //accent: colors.secondary,
+    accent: colors.gold,
   },
 };
 
@@ -42,9 +42,9 @@ const App = () => {
             options={() => ({
               headerTitle: '',
               headerStyle: {backgroundColor: colors.button},
-              headerTitleStyle: {color: '#fff'},
+              headerTitleStyle: {color: colors.gold},
               headerBackTitle: '',
-              headerTintColor: '#fff',
+              headerTintColor: colors.gold,
             })}
           />
           <Stack.Screen
@@ -53,9 +53,9 @@ const App = () => {
             options={() => ({
               headerTitle: '',
               headerStyle: {backgroundColor: colors.button},
-              headerTitleStyle: {color: '#fff'},
+              headerTitleStyle: {color: colors.gold},
               headerBackTitle: '',
-              headerTintColor: '#fff',
+              headerTintColor: colors.gold,
             })}
           />
         </Stack.Navigator>

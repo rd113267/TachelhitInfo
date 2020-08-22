@@ -78,12 +78,12 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
       resizeMode="cover"
       source={require('../images/background.png')}>
       <View style={globalStyles.overlay} />
-      <SafeAreaView>
+      <SafeAreaView style={{flex: 1}}>
         <Text
           style={[
             globalStyles.tifinaghe,
             styles.title,
-            {alignSelf: 'center', marginTop: 20},
+            {alignSelf: 'center', marginTop: 20, fontSize: 33},
           ]}>
           taclHit infu
         </Text>
@@ -99,7 +99,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
           </Text>
         </View>
 
-        <View style={{marginVertical: 20}}>
+        <View style={{marginVertical: 20, flex: 1}}>
           <View style={styles.buttonRow}>
             <Button
               style={styles.button}
@@ -245,15 +245,17 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
             mode="contained">
             tudert l-lmasih
           </Button>
-          <Button
-            uppercase={false}
-            icon="whatsapp"
-            labelStyle={styles.buttonLabel}
-            style={styles.whatsAppButton}
-            onPress={openWhatsApp}
-            mode="contained">
-            sawl-agh-d s-watsapp
-          </Button>
+          <View style={{ flex: 1, justifyContent: 'flex-end'}}>
+            <Button
+              uppercase={false}
+              icon="whatsapp"
+              labelStyle={styles.buttonLabel}
+              style={styles.whatsAppButton}
+              onPress={openWhatsApp}
+              mode="contained">
+              sawl-agh-d s-watsapp
+            </Button>
+          </View>
         </View>
       </SafeAreaView>
     </ImageBackground>
