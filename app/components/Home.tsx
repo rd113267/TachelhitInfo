@@ -170,7 +170,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               styles.title,
               {color: '#fff', alignSelf: 'center', marginBottom: 20},
             ]}>
-            arattn n-sidi ribbi
+            arratn n-sidi ribbi
           </Title>
           <View style={styles.buttonRow}>
             <Button
@@ -187,7 +187,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               labelStyle={styles.buttonLabel}
               icon="open-in-new"
               onPress={() =>
-                Linking.openURL('https://www.faithcomesbyhearing.com')
+                Linking.openURL('https://live.bible.is/bible/SHIRBD/MRK/1')
               }
               uppercase={false}
               mode="contained">
@@ -204,7 +204,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
           <View style={styles.buttonRow}>
             <Button
               style={styles.button}
-              labelStyle={styles.buttonLabel}
+              labelStyle={styles.videoButtonLabel}
               icon="video"
               onPress={() => {
                 if (Platform.OS === 'ios') {
@@ -228,7 +228,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
             )}
             <Button
               style={styles.button}
-              labelStyle={styles.buttonLabel}
+              labelStyle={styles.videoButtonLabel}
               icon="video"
               onPress={() => navigation.navigate('Maylli')}
               uppercase={false}
@@ -238,7 +238,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
           </View>
           <Button
             style={styles.button}
-            labelStyle={styles.buttonLabel}
+            labelStyle={styles.videoButtonLabel}
             icon="video"
             onPress={() => navigation.navigate('Fidyu')}
             uppercase={false}

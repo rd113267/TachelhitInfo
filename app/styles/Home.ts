@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import { colors } from '../constants';
+import {colors} from '../constants';
 
 export default StyleSheet.create({
   title: {
@@ -23,11 +23,16 @@ export default StyleSheet.create({
     marginTop: 40,
   },
   buttonLabel: {
-    fontSize: 12,
+    fontSize: 13,
     color: colors.gold,
     fontWeight: 'bold',
   },
-
+  videoButtonLabel: {
+    fontSize: 13,
+    color: colors.gold,
+    marginLeft: 7,
+    fontWeight: 'bold',
+  },
   arabicTitle: {
     fontSize: 37,
     color: '#fff',
