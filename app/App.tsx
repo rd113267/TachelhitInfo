@@ -19,7 +19,7 @@ const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: colors.button,
+    primary: colors.green,
     accent: colors.gold,
   },
 };
@@ -41,7 +41,7 @@ const App = () => {
             component={Fidyu}
             options={() => ({
               headerTitle: '',
-              headerStyle: {backgroundColor: colors.button},
+              headerStyle: {backgroundColor: colors.green},
               headerTitleStyle: {color: colors.gold},
               headerBackTitle: '',
               headerTintColor: colors.gold,
@@ -52,7 +52,7 @@ const App = () => {
             component={Maylli}
             options={() => ({
               headerTitle: '',
-              headerStyle: {backgroundColor: colors.button},
+              headerStyle: {backgroundColor: colors.green},
               headerTitleStyle: {color: colors.gold},
               headerBackTitle: '',
               headerTintColor: colors.gold,

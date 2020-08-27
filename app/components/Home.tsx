@@ -14,11 +14,12 @@ import styles from '../styles/Home';
 import {Title, Button} from 'react-native-paper';
 import VideoPlayer from 'react-native-video-controls';
 import Audio from './commons/Audio';
-import {ROOT_URL, AMSIGGEL_ID} from '../constants';
+import {ROOT_URL, AMSIGGEL_ID, JESUS_FILM_URI} from '../constants';
 import {openWhatsApp, getVideoDetails} from '../helpers';
 import Video from 'react-native-video';
 import {VideoDetails} from '../types';
 import HomeProps from '../types/Home';
+import Orientation from 'react-native-orientation-locker';
 
 const Home: FunctionComponent<HomeProps> = ({navigation}) => {
   const [playing, setPlaying] = useState(false);
@@ -31,10 +32,13 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
   const [loading3, setLoading3] = useState(false);
 
   const [paused, setPaused] = useState(true);
-  const [fullscreen, setFullscreen] = useState(false);
+  const [jesusPaused, setJesusPaused] = useState(true);
+  const [showAmsiggel, setShowAmsiggel] = useState(false);
+  const [showJesus, setShowJesus] = useState(false);
 
   const [videoDetails, setVideoDetails] = useState<VideoDetails>();
   const videoRef = useRef<Video>(null);
+  const videoRefJesus = useRef<Video>(null);
 
   useEffect(() => {
     const getDetails = async () => {
@@ -47,14 +51,22 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
   }, []);
 
   useEffect(() => {
-    if (fullscreen) {
+    if (showAmsiggel || showJesus) {
+      Orientation.lockToLandscape();
       StatusBar.setHidden(true);
     } else {
+      Orientation.lockToPortrait();
       StatusBar.setHidden(false);
     }
-  }, [fullscreen]);
+  }, [showAmsiggel, showJesus]);
 
-  if (fullscreen && Platform.OS === 'android' && videoDetails) {
+  useEffect(() => {
+    if (Platform.OS === 'android' && !Orientation.isLocked()) {
+      Orientation.lockToPortrait();
+    }
+  }, []);
+
+  if (showAmsiggel && Platform.OS === 'android' && videoDetails) {
     return (
       <VideoPlayer
         source={{uri: videoDetails.videoUrl}}
@@ -66,8 +78,26 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
         onLoad={() => setPaused(false)}
         onError={(e: Error) => Alert.alert('Error', e.message)}
         onBack={() => {
-          setFullscreen(false);
+          setShowAmsiggel(false);
           setPaused(true);
+        }}
+      />
+    );
+  }
+  if (showJesus && Platform.OS === 'android') {
+    return (
+      <VideoPlayer
+        source={{uri: JESUS_FILM_URI}}
+        disableVolume
+        disableFullscreen
+        paused={jesusPaused}
+        onPause={() => setJesusPaused(true)}
+        onPlay={() => setJesusPaused(false)}
+        onLoad={() => setJesusPaused(false)}
+        onError={(e: Error) => Alert.alert('Error', e.message)}
+        onBack={() => {
+          setShowJesus(false);
+          setJesusPaused(true);
         }}
       />
     );
@@ -94,7 +124,8 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
             marginTop: 20,
           }}>
           <Title style={styles.title}>tachelhit info</Title>
-          <Text style={[globalStyles.arabicBold, styles.arabicTitle]}>
+          <Text
+            style={[globalStyles.arabicBold, styles.arabicTitle, styles.red]}>
             تاشلحيت ءينفو
           </Text>
         </View>
@@ -168,9 +199,10 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
           <Title
             style={[
               styles.title,
-              {color: '#fff', alignSelf: 'center', marginBottom: 20},
+              styles.red,
+              {alignSelf: 'center', marginBottom: 20},
             ]}>
-            arratn n-sidi ribbi
+            arratn n-sidi rbbi
           </Title>
           <View style={styles.buttonRow}>
             <Button
@@ -197,7 +229,8 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
           <Title
             style={[
               styles.title,
-              {color: '#fff', alignSelf: 'center', marginBottom: 20},
+              styles.red,
+              {alignSelf: 'center', marginBottom: 20},
             ]}>
             videos
           </Title>
@@ -210,7 +243,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                 if (Platform.OS === 'ios') {
                   videoRef.current?.presentFullscreenPlayer();
                 } else {
-                  setFullscreen(true);
+                  setShowAmsiggel(true);
                 }
               }}
               uppercase={false}
@@ -240,12 +273,27 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
             style={styles.button}
             labelStyle={styles.videoButtonLabel}
             icon="video"
-            onPress={() => navigation.navigate('Fidyu')}
+            onPress={() => {
+              if (Platform.OS === 'ios') {
+                videoRefJesus.current?.presentFullscreenPlayer();
+              } else {
+                setShowJesus(true);
+              }
+            }}
             uppercase={false}
             mode="contained">
             tudert l-lmasih
           </Button>
-          <View style={{ flex: 1, justifyContent: 'flex-end'}}>
+          {showJesus && (
+            <Video
+              source={{uri: JESUS_FILM_URI}}
+              ref={videoRefJesus}
+              paused={jesusPaused}
+              onFullscreenPlayerDidPresent={() => setJesusPaused(false)}
+              onFullscreenPlayerDidDismiss={() => setJesusPaused(true)}
+            />
+          )}
+          <View style={{flex: 1, justifyContent: 'flex-end'}}>
             <Button
               uppercase={false}
               icon="whatsapp"

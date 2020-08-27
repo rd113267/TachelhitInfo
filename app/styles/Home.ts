@@ -4,15 +4,18 @@ import {colors} from '../constants';
 export default StyleSheet.create({
   title: {
     fontSize: 27,
-    color: '#fff',
+    color: colors.red,
+  },
+  red: {
+    color: colors.red,
   },
   buttonRow: {
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     marginBottom: 20,
   },
   button: {
-    width: 170,
+    width: 190,
     alignSelf: 'center',
     marginHorizontal: 5,
     justifyContent: 'center',
@@ -23,12 +26,12 @@ export default StyleSheet.create({
     marginTop: 40,
   },
   buttonLabel: {
-    fontSize: 13,
+    fontSize: 15,
     color: colors.gold,
     fontWeight: 'bold',
   },
   videoButtonLabel: {
-    fontSize: 13,
+    fontSize: 15,
     color: colors.gold,
     marginLeft: 7,
     fontWeight: 'bold',

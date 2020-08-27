@@ -5,6 +5,7 @@ import {MAYLLI_URI, colors} from '../constants';
 import {ActivityIndicator} from 'react-native-paper';
 import globalStyles from '../styles/globalStyles';
 
+
 const Maylli = () => {
   const [loading, setLoading] = useState(true);
   return (
@@ -25,10 +26,18 @@ const Maylli = () => {
           height: 50,
         }}
         onLoadEnd={() => setLoading(false)}
+        mediaPlaybackRequiresUserAction={false}
+        allowsInlineMediaPlayback
         allowsFullscreenVideo
         javaScriptEnabled
+        scrollEnabled={false}
         originWhitelist={['*']}
         source={{uri: MAYLLI_URI}}
+        // source={{
+        //   html:
+        //     `<iframe width='560' height='315' src='${MAYLLI_URI}' frameborder='0' allow='autoplay;' allowfullscreen></iframe>`,
+        // }}
+        userAgent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
       />
     </ImageBackground>
   );
