@@ -2,10 +2,12 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   arabic: {
-    fontFamily: 'TraditionalArabic',
+    //fontFamily: 'TraditionalArabic',
+    fontFamily: 'ScheherazadeOTM2A-Regular',
   },
   arabicBold: {
-    fontFamily: 'TraditionalArabic-Bold',
+    //fontFamily: 'TraditionalArabic-Bold',
+    fontFamily: 'ScheherazadeOTM2A-Regular',
   },
   tifinaghe: {
     fontFamily: 'TamazightTifinaghe',

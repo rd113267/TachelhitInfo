@@ -8,18 +8,25 @@ import {
   Alert,
   StatusBar,
   Linking,
+  Image,
 } from 'react-native';
 import globalStyles from '../styles/globalStyles';
 import styles from '../styles/Home';
 import {Title, Button} from 'react-native-paper';
 import VideoPlayer from 'react-native-video-controls';
 import Audio from './commons/Audio';
-import {ROOT_URL, AMSIGGEL_ID, JESUS_FILM_URI} from '../constants';
-import {openWhatsApp, getVideoDetails} from '../helpers';
+import {ROOT_URL, AMSIGGEL_ID, JESUS_FILM_URI, colors} from '../constants';
+import {
+  openWhatsApp,
+  getVideoDetails,
+  downloadLink,
+  openAwalIwass,
+} from '../helpers';
 import Video from 'react-native-video';
 import {VideoDetails} from '../types';
 import HomeProps from '../types/Home';
 import Orientation from 'react-native-orientation-locker';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const Home: FunctionComponent<HomeProps> = ({navigation}) => {
   const [playing, setPlaying] = useState(false);
@@ -39,6 +46,12 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
   const [videoDetails, setVideoDetails] = useState<VideoDetails>();
   const videoRef = useRef<Video>(null);
   const videoRefJesus = useRef<Video>(null);
+
+  const [downloadingArabic, setDownloadingArabic] = useState(false);
+  const [downloadingLatin, setDownloadingLatin] = useState(false);
+
+  const awaliwassArabic = `${ROOT_URL}pdf/awaliwass-ar.pdf`;
+  const awaliwassLatin = `${ROOT_URL}pdf/awaliwass-lat.pdf`;
 
   useEffect(() => {
     const getDetails = async () => {
@@ -113,7 +126,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
           style={[
             globalStyles.tifinaghe,
             styles.title,
-            {alignSelf: 'center', marginTop: 20, fontSize: 33},
+            {alignSelf: 'center', marginTop: 15, fontSize: 33},
           ]}>
           taclHit infu
         </Text>
@@ -121,7 +134,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
           style={{
             flexDirection: 'row',
             justifyContent: 'space-evenly',
-            marginTop: 20,
+            marginTop: 15,
           }}>
           <Title style={styles.title}>tachelhit info</Title>
           <Text
@@ -130,7 +143,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
           </Text>
         </View>
 
-        <View style={{marginVertical: 20, flex: 1}}>
+        <View style={{marginVertical: 15, flex: 1}}>
           <View style={styles.buttonRow}>
             <Button
               style={styles.button}
@@ -200,7 +213,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
             style={[
               styles.title,
               styles.red,
-              {alignSelf: 'center', marginBottom: 20},
+              {alignSelf: 'center', marginBottom: 15},
             ]}>
             arratn n-sidi rbbi
           </Title>
@@ -230,7 +243,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
             style={[
               styles.title,
               styles.red,
-              {alignSelf: 'center', marginBottom: 20},
+              {alignSelf: 'center', marginBottom: 15},
             ]}>
             videos
           </Title>
@@ -293,6 +306,69 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               onFullscreenPlayerDidDismiss={() => setJesusPaused(true)}
             />
           )}
+          <Title
+            style={[
+              styles.title,
+              styles.red,
+              {alignSelf: 'center', marginVertical: 15},
+            ]}>
+            awal i-wass
+          </Title>
+          <View style={styles.buttonRow}>
+            <Button
+              style={styles.button}
+              labelStyle={styles.buttonLabel}
+              icon="download"
+              loading={downloadingLatin}
+              onPress={async () => {
+                setDownloadingLatin(true);
+                await downloadLink(awaliwassLatin, 'awaliwass-lat', true);
+                setDownloadingLatin(false);
+              }}
+              uppercase={false}
+              mode="contained">
+              awal i-wass
+            </Button>
+            <Button
+              style={styles.button}
+              labelStyle={[
+                styles.buttonLabel,
+                globalStyles.arabic,
+                {fontSize: 20},
+              ]}
+              icon="download"
+              loading={downloadingArabic}
+              onPress={async () => {
+                setDownloadingArabic(true);
+                await downloadLink(awaliwassArabic, 'awaliwass-ar', true);
+                setDownloadingArabic(false);
+              }}
+              uppercase={false}
+              mode="contained">
+              اوال ءي‑واسّ
+            </Button>
+          </View>
+          <TouchableOpacity onPress={openAwalIwass}>
+            <Image
+              source={require('../images/awaliwass.png')}
+              style={{
+                height: 70,
+                width: 70,
+                alignSelf: 'center',
+                borderRadius: 5,
+                marginBottom: 10,
+              }}
+            />
+            <Text
+              style={{
+                textAlign: 'center',
+                color: colors.red,
+                fontWeight: 'bold',
+                fontSize: 18,
+              }}>
+              sflid i-wawal n-rbbi kraygatt ass
+            </Text>
+          </TouchableOpacity>
           <View style={{flex: 1, justifyContent: 'flex-end'}}>
             <Button
               uppercase={false}

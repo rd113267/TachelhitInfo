@@ -73,3 +73,19 @@ export const openWhatsApp = async () => {
     }
   }
 };
+
+export const openAwalIwass = async () => {
+  try {
+    if (Platform.OS === 'ios') {
+      await Linking.openURL(
+        'itms-apps://apps.apple.com/gb/app/awal-i-wass/id1511054521',
+      );
+    } else {
+      await Linking.openURL(
+        'https://play.google.com/store/apps/details?id=com.wordofgodforeachday',
+      );
+    }
+  } catch (e) {
+    Alert.alert('Error', e.message);
+  }
+};
