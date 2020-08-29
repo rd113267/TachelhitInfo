@@ -12,19 +12,7 @@ export default StyleSheet.create({
   tifinaghe: {
     fontFamily: 'TamazightTifinaghe',
   },
-  overlay: {
-    flex: 1,
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    right: 0,
-    bottom: 0,
-    opacity: 0,
-    backgroundColor: 'black',
-  },
   imgBackground: {
-    width: '100%',
-    height: '100%',
     flex: 1,
   },
   loading: {

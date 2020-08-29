@@ -15,10 +15,10 @@ export default StyleSheet.create({
   buttonRow: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    marginBottom: 15,
+    marginBottom: 10,
   },
   button: {
-    width: 190,
+    minWidth: 180,
     alignSelf: 'center',
     marginHorizontal: 5,
     justifyContent: 'center',
@@ -32,11 +32,14 @@ export default StyleSheet.create({
     fontSize: 15,
     color: colors.black,
     fontWeight: 'bold',
+    marginHorizontal: 10,
+    marginVertical: 7,
   },
   videoButtonLabel: {
     fontSize: 15,
     color: colors.black,
-    marginLeft: 7,
+    marginHorizontal: 10,
+    marginVertical: 7,
     fontWeight: 'bold',
   },
   arabicTitle: {

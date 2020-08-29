@@ -121,9 +121,8 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
       style={globalStyles.imgBackground}
       resizeMode="cover"
       source={require('../images/background.png')}>
-      <ScrollView contentContainerStyle={{flex: 1}}>
-        <SafeAreaView style={{flex: 1}}>
-          <View style={globalStyles.overlay} />
+      <SafeAreaView>
+        <ScrollView>
           <View style={[styles.textBackground, {marginTop: 10}]}>
             <Text
               style={[
@@ -155,7 +154,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
             </View>
           </View>
 
-          <View style={{marginVertical: 15, flex: 1}}>
+          <View style={{marginVertical: 10, flex: 1}}>
             <View style={styles.buttonRow}>
               <Button
                 style={styles.button}
@@ -221,7 +220,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                 onBuffer={({isBuffering}) => setLoading3(isBuffering)}
               />
             </View>
-            <View style={[styles.textBackground, {marginBottom: 15}]}>
+            <View style={[styles.textBackground, {marginBottom: 10}]}>
               <Title
                 style={[
                   styles.title,
@@ -307,7 +306,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               sflid i-wawal n-rbbi kraygatt ass
             </Button>
 
-            <View style={[styles.textBackground, {marginBottom: 15}]}>
+            <View style={[styles.textBackground, {marginBottom: 10}]}>
               <Title
                 style={[
                   styles.title,
@@ -387,8 +386,8 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               </Button>
             </View>
           </View>
-        </SafeAreaView>
-      </ScrollView>
+        </ScrollView>
+      </SafeAreaView>
     </ImageBackground>
   );
 };
