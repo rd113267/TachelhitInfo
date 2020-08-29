@@ -4,10 +4,13 @@ import {colors} from '../constants';
 export default StyleSheet.create({
   title: {
     fontSize: 27,
-    color: colors.red,
+    color: colors.white,
   },
-  red: {
-    color: colors.red,
+  textBackground: {
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    padding: 5,
+    borderRadius: 5,
+    alignSelf: 'center',
   },
   buttonRow: {
     flexDirection: 'row',
@@ -27,18 +30,17 @@ export default StyleSheet.create({
   },
   buttonLabel: {
     fontSize: 15,
-    color: colors.gold,
+    color: colors.black,
     fontWeight: 'bold',
   },
   videoButtonLabel: {
     fontSize: 15,
-    color: colors.gold,
+    color: colors.black,
     marginLeft: 7,
     fontWeight: 'bold',
   },
   arabicTitle: {
     fontSize: 37,
     color: '#fff',
-    marginTop: -13,
   },
 });

@@ -2,6 +2,8 @@ export const colors = {
   red: 'red', // '#dc3832',
   green: '#307155',
   gold: 'gold',
+  black: '#000',
+  white: '#fff'
 };
 
 export const ROOT_URL = 'https://www.tachelhit.info/';
