@@ -16,7 +16,7 @@ const Maylli = () => {
       {loading && (
         <ActivityIndicator
           style={globalStyles.loading}
-          color={colors.gold}
+          color={colors.white}
           size="large"
         />
       )}

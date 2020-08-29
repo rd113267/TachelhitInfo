@@ -41,10 +41,10 @@ const App = () => {
             component={Fidyu}
             options={() => ({
               headerTitle: '',
-              headerStyle: {backgroundColor: colors.green},
-              headerTitleStyle: {color: colors.gold},
+              headerStyle: {backgroundColor: colors.white},
+              headerTitleStyle: {color: colors.black},
               headerBackTitle: '',
-              headerTintColor: colors.gold,
+              headerTintColor: colors.black,
             })}
           />
           <Stack.Screen
@@ -52,10 +52,10 @@ const App = () => {
             component={Maylli}
             options={() => ({
               headerTitle: '',
-              headerStyle: {backgroundColor: colors.green},
-              headerTitleStyle: {color: colors.gold},
+              headerStyle: {backgroundColor: colors.white},
+              headerTitleStyle: {color: colors.black},
               headerBackTitle: '',
-              headerTintColor: colors.gold,
+              headerTintColor: colors.black,
             })}
           />
         </Stack.Navigator>
