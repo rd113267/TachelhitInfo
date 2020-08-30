@@ -61,6 +61,8 @@
 		<string>Zocial.ttf</string>
 		<string>TraditionalArabic-Bold.ttf</string>
 		<string>ScheherazadeOTM2A-Regular.TTF</string>
+		<string>ScheherazadeOTM2A-Regular.ttf</string>
+		<string>ScheherazadeOTM2A.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

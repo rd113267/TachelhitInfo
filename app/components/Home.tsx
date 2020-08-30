@@ -128,7 +128,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               style={[
                 globalStyles.tifinaghe,
                 styles.title,
-                {alignSelf: 'center', fontSize: 33},
+                {alignSelf: 'center', fontSize: 45},
               ]}>
               taclHit infu
             </Text>
@@ -140,7 +140,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               marginTop: 10,
             }}>
             <View style={styles.textBackground}>
-              <Title style={styles.title}>tachelhit info</Title>
+              <Text style={styles.title}>tachelhit info</Text>
             </View>
             <View style={[styles.textBackground, {paddingVertical: 0}]}>
               <Text
@@ -221,13 +221,13 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               />
             </View>
             <View style={[styles.textBackground, {marginBottom: 10}]}>
-              <Title
+              <Text
                 style={[
                   styles.title,
                   {alignSelf: 'center', color: colors.white},
                 ]}>
                 arratn n-sidi rbbi
-              </Title>
+              </Text>
             </View>
             <View style={styles.buttonRow}>
               <Button
@@ -271,7 +271,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                 labelStyle={[
                   styles.buttonLabel,
                   globalStyles.arabic,
-                  {fontSize: 20},
+                  {fontSize: 20, marginVertical: 2},
                 ]}
                 icon="download"
                 loading={downloadingArabic}
@@ -285,35 +285,23 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                 اوال ءي‑واسّ
               </Button>
             </View>
-            <TouchableOpacity onPress={openAwalIwass}>
-              <Image
-                source={require('../images/awaliwass.png')}
-                style={{
-                  height: 70,
-                  width: 70,
-                  alignSelf: 'center',
-                  borderRadius: 5,
-                }}
-              />
-            </TouchableOpacity>
             <Button
               onPress={openAwalIwass}
               icon="open-in-new"
-              style={{margin: 10}}
+              style={{marginHorizontal: 15, marginBottom: 10}}
               uppercase={false}
               labelStyle={styles.buttonLabel}
               mode="contained">
               sflid i-wawal n-rbbi kraygatt ass
             </Button>
-
             <View style={[styles.textBackground, {marginBottom: 10}]}>
-              <Title
+              <Text
                 style={[
                   styles.title,
                   {alignSelf: 'center', color: colors.white},
                 ]}>
                 videos
-              </Title>
+              </Text>
             </View>
             <View style={styles.buttonRow}>
               <Button
@@ -322,22 +310,22 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                 icon="video"
                 onPress={() => {
                   if (Platform.OS === 'ios') {
-                    videoRef.current?.presentFullscreenPlayer();
+                    videoRefJesus.current?.presentFullscreenPlayer();
                   } else {
-                    setShowAmsiggel(true);
+                    setShowJesus(true);
                   }
                 }}
                 uppercase={false}
                 mode="contained">
-                amuddu n-umsiggel
+                tudert l-lmasih
               </Button>
-              {videoDetails && (
+              {showJesus && (
                 <Video
-                  source={{uri: videoDetails.videoUrl}}
-                  ref={videoRef}
-                  paused={paused}
-                  onFullscreenPlayerDidPresent={() => setPaused(false)}
-                  onFullscreenPlayerDidDismiss={() => setPaused(true)}
+                  source={{uri: JESUS_FILM_URI}}
+                  ref={videoRefJesus}
+                  paused={jesusPaused}
+                  onFullscreenPlayerDidPresent={() => setJesusPaused(false)}
+                  onFullscreenPlayerDidDismiss={() => setJesusPaused(true)}
                 />
               )}
               <Button
@@ -356,22 +344,22 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               icon="video"
               onPress={() => {
                 if (Platform.OS === 'ios') {
-                  videoRefJesus.current?.presentFullscreenPlayer();
+                  videoRef.current?.presentFullscreenPlayer();
                 } else {
-                  setShowJesus(true);
+                  setShowAmsiggel(true);
                 }
               }}
               uppercase={false}
               mode="contained">
-              tudert l-lmasih
+              amuddu n-umsiggel
             </Button>
-            {showJesus && (
+            {videoDetails && (
               <Video
-                source={{uri: JESUS_FILM_URI}}
-                ref={videoRefJesus}
-                paused={jesusPaused}
-                onFullscreenPlayerDidPresent={() => setJesusPaused(false)}
-                onFullscreenPlayerDidDismiss={() => setJesusPaused(true)}
+                source={{uri: videoDetails.videoUrl}}
+                ref={videoRef}
+                paused={paused}
+                onFullscreenPlayerDidPresent={() => setPaused(false)}
+                onFullscreenPlayerDidDismiss={() => setPaused(true)}
               />
             )}
             <View style={{flex: 1, justifyContent: 'flex-end'}}>

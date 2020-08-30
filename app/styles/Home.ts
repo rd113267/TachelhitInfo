@@ -3,7 +3,7 @@ import {colors} from '../constants';
 
 export default StyleSheet.create({
   title: {
-    fontSize: 27,
+    fontSize: 32,
     color: colors.white,
   },
   textBackground: {
