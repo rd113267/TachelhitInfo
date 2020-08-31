@@ -287,7 +287,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
             </View>
             <Button
               onPress={openAwalIwass}
-              icon="open-in-new"
+              icon={Platform.OS === 'ios' ? 'apple' : 'google-play'}
               style={{marginHorizontal: 15, marginBottom: 10}}
               uppercase={false}
               labelStyle={styles.buttonLabel}
@@ -362,20 +362,18 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                 onFullscreenPlayerDidDismiss={() => setPaused(true)}
               />
             )}
-            <View style={{flex: 1, justifyContent: 'flex-end'}}>
-              <Button
-                uppercase={false}
-                icon="whatsapp"
-                labelStyle={styles.buttonLabel}
-                style={styles.whatsAppButton}
-                onPress={openWhatsApp}
-                mode="contained">
-                sawl-agh-d s-watsapp
-              </Button>
-            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
+      <Button
+        uppercase={false}
+        icon="whatsapp"
+        labelStyle={styles.buttonLabel}
+        style={styles.whatsAppButton}
+        onPress={openWhatsApp}
+        mode="contained">
+        sawl-agh-d s-watsapp
+      </Button>
     </ImageBackground>
   );
 };

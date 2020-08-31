@@ -24,9 +24,10 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   whatsAppButton: {
+    position: 'absolute',
+    bottom: 10,
     width: 250,
     alignSelf: 'center',
-    marginTop: 40,
   },
   buttonLabel: {
     fontSize: 15,
