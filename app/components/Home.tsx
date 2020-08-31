@@ -8,12 +8,11 @@ import {
   Alert,
   StatusBar,
   Linking,
-  Image,
   ScrollView,
 } from 'react-native';
 import globalStyles from '../styles/globalStyles';
 import styles from '../styles/Home';
-import {Title, Button} from 'react-native-paper';
+import {Button} from 'react-native-paper';
 import VideoPlayer from 'react-native-video-controls';
 import Audio from './commons/Audio';
 import {ROOT_URL, AMSIGGEL_ID, JESUS_FILM_URI, colors} from '../constants';
@@ -27,7 +26,6 @@ import Video from 'react-native-video';
 import {VideoDetails} from '../types';
 import HomeProps from '../types/Home';
 import Orientation from 'react-native-orientation-locker';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const Home: FunctionComponent<HomeProps> = ({navigation}) => {
   const [playing, setPlaying] = useState(false);
@@ -123,35 +121,31 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
       source={require('../images/background.png')}>
       <SafeAreaView>
         <ScrollView>
-          <View style={[styles.textBackground, {marginTop: 10}]}>
-            <Text
-              style={[
-                globalStyles.tifinaghe,
-                styles.title,
-                {alignSelf: 'center', fontSize: 45},
-              ]}>
-              taclHit infu
-            </Text>
-          </View>
+          <Text
+            style={[
+              globalStyles.tifinaghe,
+              styles.title,
+              {alignSelf: 'center', fontSize: 45},
+            ]}>
+            taclHit infu
+          </Text>
+
           <View
             style={{
               flexDirection: 'row',
               justifyContent: 'space-evenly',
               marginTop: 10,
             }}>
-            <View style={styles.textBackground}>
-              <Text style={styles.title}>tachelhit info</Text>
-            </View>
-            <View style={[styles.textBackground, {paddingVertical: 0}]}>
-              <Text
-                style={[
-                  globalStyles.arabicBold,
-                  styles.arabicTitle,
-                  {color: colors.white},
-                ]}>
-                تاشلحيت ءينفو
-              </Text>
-            </View>
+            <Text style={styles.title}>tachelhit info</Text>
+            <Text
+              style={[
+                styles.title,
+                globalStyles.arabic,
+                styles.arabicTitle,
+                {color: colors.white},
+              ]}>
+              تاشلحيت ءينفو
+            </Text>
           </View>
 
           <View style={{marginVertical: 10, flex: 1}}>
@@ -220,15 +214,19 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                 onBuffer={({isBuffering}) => setLoading3(isBuffering)}
               />
             </View>
-            <View style={[styles.textBackground, {marginBottom: 10}]}>
-              <Text
-                style={[
-                  styles.title,
-                  {alignSelf: 'center', color: colors.white},
-                ]}>
-                arratn n-sidi rbbi
-              </Text>
-            </View>
+            <Text
+              style={[
+                styles.title,
+                {
+                  alignSelf: 'center',
+                  color: colors.white,
+                  marginBottom: 10,
+                  marginTop: 20,
+                },
+              ]}>
+              arratn n-sidi rbbi
+            </Text>
+
             <View style={styles.buttonRow}>
               <Button
                 style={styles.button}
@@ -271,7 +269,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                 labelStyle={[
                   styles.buttonLabel,
                   globalStyles.arabic,
-                  {fontSize: 20, marginVertical: 2},
+                  {fontSize: 22, marginVertical: 4},
                 ]}
                 icon="download"
                 loading={downloadingArabic}
@@ -298,7 +296,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               <Text
                 style={[
                   styles.title,
-                  {alignSelf: 'center', color: colors.white},
+                  {alignSelf: 'center', color: colors.white, marginTop: 20},
                 ]}>
                 videos
               </Text>

@@ -2,12 +2,19 @@ import {StyleSheet} from 'react-native';
 import {colors} from '../constants';
 
 export default StyleSheet.create({
+  outline: {
+    position: 'absolute',
+  },
   title: {
     fontSize: 32,
     color: colors.white,
+    textShadowColor: '#000',
+    textShadowOffset: {width: 1, height: 1},
+    textShadowRadius: 3,
+    elevation: 10,
   },
   textBackground: {
-    backgroundColor: 'rgba(0,0,0,0.6)',
+    //backgroundColor: 'rgba(0,0,0,0.6)',
     padding: 5,
     borderRadius: 5,
     alignSelf: 'center',
@@ -30,21 +37,20 @@ export default StyleSheet.create({
     alignSelf: 'center',
   },
   buttonLabel: {
-    fontSize: 15,
+    fontSize: 17,
     color: colors.black,
-    fontWeight: 'bold',
     marginHorizontal: 10,
     marginVertical: 7,
+    //fontFamily: 'roboto'
   },
   videoButtonLabel: {
-    fontSize: 15,
+    fontSize: 17,
     color: colors.black,
     marginHorizontal: 10,
     marginVertical: 7,
-    fontWeight: 'bold',
   },
   arabicTitle: {
-    fontSize: 37,
+    fontSize: 40,
     color: '#fff',
   },
 });
