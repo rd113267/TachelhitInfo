@@ -24,6 +24,7 @@
 		B7562ED4FB6E2BB5F580F0F2 /* libPods-TachelhitInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32BF948C6253F1CF181B3B69 /* libPods-TachelhitInfo.a */; };
 		E22A63D77C2843CDB2E2648F /* ScheherazadeOTM2A-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DA50974CB2E46EFA830016F /* ScheherazadeOTM2A-Regular.ttf */; };
 		18042B58F9414A9F942BD9AD /* ScheherazadeOTM2A.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88BAE303C07243BA9EC58327 /* ScheherazadeOTM2A.ttf */; };
+		855327F02CBD4E72B1A464C0 /* Scheherazade-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3A3D04FD947421AB5D8436C /* Scheherazade-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		F1A2958304624803A416F6C9 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		2DA50974CB2E46EFA830016F /* ScheherazadeOTM2A-Regular.ttf */ = {isa = PBXFileReference; name = "ScheherazadeOTM2A-Regular.ttf"; path = "../assets/fonts/ScheherazadeOTM2A-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		88BAE303C07243BA9EC58327 /* ScheherazadeOTM2A.ttf */ = {isa = PBXFileReference; name = "ScheherazadeOTM2A.ttf"; path = "../assets/fonts/ScheherazadeOTM2A.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C3A3D04FD947421AB5D8436C /* Scheherazade-Bold.ttf */ = {isa = PBXFileReference; name = "Scheherazade-Bold.ttf"; path = "../assets/fonts/Scheherazade-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 				7EB03DD5DC424FF8AEA264BE /* Zocial.ttf */,
 				2DA50974CB2E46EFA830016F /* ScheherazadeOTM2A-Regular.ttf */,
 				88BAE303C07243BA9EC58327 /* ScheherazadeOTM2A.ttf */,
+				C3A3D04FD947421AB5D8436C /* Scheherazade-Bold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				0A300ACB24E87EAD004E715D /* GoogleService-Info.plist in Resources */,
 				E22A63D77C2843CDB2E2648F /* ScheherazadeOTM2A-Regular.ttf in Resources */,
 				18042B58F9414A9F942BD9AD /* ScheherazadeOTM2A.ttf in Resources */,
+				855327F02CBD4E72B1A464C0 /* Scheherazade-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

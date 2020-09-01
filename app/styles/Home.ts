@@ -36,15 +36,24 @@ export default StyleSheet.create({
     width: 250,
     alignSelf: 'center',
   },
+  arabicButton: {
+    backgroundColor: '#fff',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 10,
+    paddingVertical: 1,
+    borderRadius: 3,
+    minWidth: 180,
+  },
   buttonLabel: {
-    fontSize: 17,
+    fontSize: 15,
     color: colors.black,
     marginHorizontal: 10,
     marginVertical: 7,
-    //fontFamily: 'roboto'
   },
   videoButtonLabel: {
-    fontSize: 17,
+    fontSize: 15,
     color: colors.black,
     marginHorizontal: 10,
     marginVertical: 7,
@@ -52,5 +61,6 @@ export default StyleSheet.create({
   arabicTitle: {
     fontSize: 40,
     color: '#fff',
+    marginTop: -7
   },
 });

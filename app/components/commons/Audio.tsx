@@ -11,7 +11,9 @@ const Audio: FunctionComponent<AudioProps> = ({paused, uri, onBuffer}) => {
       source={{uri}} // Can be a URL or a local file.
       onBuffer={onBuffer}
       onError={(error) => {
-        Alert.alert('Error', error.error.errorString);
+        __DEV__
+          ? console.warn(error.error.errorString)
+          : Alert.alert('Error', error.error.errorString);
       }}
       playInBackground
       playWhenInactive

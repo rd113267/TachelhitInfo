@@ -2,14 +2,12 @@ import {StyleSheet, Platform} from 'react-native';
 
 export default StyleSheet.create({
   arabic: {
-    //fontFamily: 'TraditionalArabic',
     fontFamily:
       Platform.OS === 'ios' ? 'ScheherazadeOTM2A-Regular' : 'ScheherazadeOTM2A',
   },
   arabicBold: {
-    //fontFamily: 'TraditionalArabic-Bold',
     fontFamily:
-      Platform.OS === 'ios' ? 'ScheherazadeOTM2A-Regular' : 'ScheherazadeOTM2A',
+      Platform.OS === 'ios' ? 'ScheherazadeOTM2A-Regular' : 'Scheherazade-Bold',
   },
   tifinaghe: {
     fontFamily: 'TamazightTifinaghe',

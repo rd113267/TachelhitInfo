@@ -42,7 +42,6 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>TamazightTifinaghe.ttf</string>
-		<string>TraditionalArabic.ttf</string>
 		<string>MaterialIcons.ttf</string>
 		<string>MaterialCommunityIcons.ttf</string>
 		<string>AntDesign.ttf</string>
@@ -59,10 +58,10 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
-		<string>TraditionalArabic-Bold.ttf</string>
 		<string>ScheherazadeOTM2A-Regular.TTF</string>
 		<string>ScheherazadeOTM2A-Regular.ttf</string>
 		<string>ScheherazadeOTM2A.ttf</string>
+		<string>Scheherazade-Bold.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

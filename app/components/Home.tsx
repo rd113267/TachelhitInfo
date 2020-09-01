@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import globalStyles from '../styles/globalStyles';
 import styles from '../styles/Home';
-import {Button} from 'react-native-paper';
+import {Button, ActivityIndicator} from 'react-native-paper';
 import VideoPlayer from 'react-native-video-controls';
 import Audio from './commons/Audio';
 import {ROOT_URL, AMSIGGEL_ID, JESUS_FILM_URI, colors} from '../constants';
@@ -26,6 +26,8 @@ import Video from 'react-native-video';
 import {VideoDetails} from '../types';
 import HomeProps from '../types/Home';
 import Orientation from 'react-native-orientation-locker';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Home: FunctionComponent<HomeProps> = ({navigation}) => {
   const [playing, setPlaying] = useState(false);
@@ -48,9 +50,13 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
 
   const [downloadingArabic, setDownloadingArabic] = useState(false);
   const [downloadingLatin, setDownloadingLatin] = useState(false);
+  const [downloadingOT, setDownloadingOT] = useState(false);
+  const [downloadingNT, setDownloadingNT] = useState(false)
 
   const awaliwassArabic = `${ROOT_URL}pdf/awaliwass-ar.pdf`;
   const awaliwassLatin = `${ROOT_URL}pdf/awaliwass-lat.pdf`;
+  const latinOT = `${ROOT_URL}pdf/laahd aqdim.pdf`;
+  const latinNT = `${ROOT_URL}pdf/laahd l-ljdid.pdf`;
 
   useEffect(() => {
     const getDetails = async () => {
@@ -88,7 +94,9 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
         onPause={() => setPaused(true)}
         onPlay={() => setPaused(false)}
         onLoad={() => setPaused(false)}
-        onError={(e: Error) => Alert.alert('Error', e.message)}
+        onError={(e: Error) =>
+          __DEV__ ? console.warn(e.message) : Alert.alert('Error', e.message)
+        }
         onBack={() => {
           setShowAmsiggel(false);
           setPaused(true);
@@ -106,7 +114,9 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
         onPause={() => setJesusPaused(true)}
         onPlay={() => setJesusPaused(false)}
         onLoad={() => setJesusPaused(false)}
-        onError={(e: Error) => Alert.alert('Error', e.message)}
+        onError={(e: Error) =>
+          __DEV__ ? console.warn(e.message) : Alert.alert('Error', e.message)
+        }
         onBack={() => {
           setShowJesus(false);
           setJesusPaused(true);
@@ -140,7 +150,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
             <Text
               style={[
                 styles.title,
-                globalStyles.arabic,
+                globalStyles.arabicBold,
                 styles.arabicTitle,
                 {color: colors.white},
               ]}>
@@ -148,7 +158,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
             </Text>
           </View>
 
-          <View style={{marginVertical: 10, flex: 1}}>
+          <View style={{marginBottom: 10, flex: 1}}>
             <View style={styles.buttonRow}>
               <Button
                 style={styles.button}
@@ -221,7 +231,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                   alignSelf: 'center',
                   color: colors.white,
                   marginBottom: 10,
-                  marginTop: 20,
+                  marginTop: 10,
                 },
               ]}>
               arratn n-sidi rbbi
@@ -254,33 +264,29 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                 style={styles.button}
                 labelStyle={styles.buttonLabel}
                 icon="download"
-                loading={downloadingLatin}
+                loading={downloadingOT}
                 onPress={async () => {
-                  setDownloadingLatin(true);
-                  await downloadLink(awaliwassLatin, 'awaliwass-lat', true);
-                  setDownloadingLatin(false);
+                  setDownloadingOT(true);
+                  await downloadLink(latinOT, 'laahd aqdim', true);
+                  setDownloadingOT(false);
                 }}
                 uppercase={false}
                 mode="contained">
-                awal i-wass
+                laahd aqdim
               </Button>
               <Button
                 style={styles.button}
-                labelStyle={[
-                  styles.buttonLabel,
-                  globalStyles.arabic,
-                  {fontSize: 22, marginVertical: 4},
-                ]}
+                labelStyle={styles.buttonLabel}
                 icon="download"
-                loading={downloadingArabic}
+                loading={downloadingNT}
                 onPress={async () => {
-                  setDownloadingArabic(true);
-                  await downloadLink(awaliwassArabic, 'awaliwass-ar', true);
-                  setDownloadingArabic(false);
+                  setDownloadingNT(true);
+                  await downloadLink(latinNT, 'laahd l-ljdid', true);
+                  setDownloadingNT(false);
                 }}
                 uppercase={false}
                 mode="contained">
-                اوال ءي‑واسّ
+                laahd l-ljdid
               </Button>
             </View>
             <Button
@@ -292,11 +298,49 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               mode="contained">
               sflid i-wawal n-rbbi kraygatt ass
             </Button>
+            <View style={styles.buttonRow}>
+              <Button
+                style={styles.button}
+                labelStyle={styles.buttonLabel}
+                icon="download"
+                loading={downloadingLatin}
+                onPress={async () => {
+                  setDownloadingLatin(true);
+                  await downloadLink(awaliwassLatin, 'awaliwass-lat', true);
+                  setDownloadingLatin(false);
+                }}
+                uppercase={false}
+                mode="contained">
+                awal i-wass
+              </Button>
+              <TouchableOpacity
+                onPress={async () => {
+                  setDownloadingArabic(true);
+                  await downloadLink(awaliwassArabic, 'awaliwass-ar', true);
+                  setDownloadingArabic(false);
+                }}
+                style={styles.arabicButton}>
+                {downloadingArabic ? (
+                  <ActivityIndicator
+                    color="#000"
+                    animating
+                    size={17}
+                    style={{marginRight: 5}}
+                  />
+                ) : (
+                  <Icon size={17} style={{marginRight: 5}} name="download" />
+                )}
+                <Text style={[{fontSize: 25}, globalStyles.arabic]}>
+                  اوال ءي واسّ
+                </Text>
+              </TouchableOpacity>
+            </View>
+
             <View style={[styles.textBackground, {marginBottom: 10}]}>
               <Text
                 style={[
                   styles.title,
-                  {alignSelf: 'center', color: colors.white, marginTop: 20},
+                  {alignSelf: 'center', color: colors.white, marginTop: 10},
                 ]}>
                 videos
               </Text>

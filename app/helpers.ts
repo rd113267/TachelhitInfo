@@ -49,7 +49,7 @@ export const getVideoDetails = async (id: string): Promise<VideoDetails> => {
       video,
     };
   } catch (e) {
-    Alert.alert('Error', e.message);
+    __DEV__ ? console.warn(e.message) : Alert.alert('Error', e.message);
     return {thumbnailUrl: '', videoUrl: '', video: {}};
   }
 };
