@@ -51,7 +51,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
   const [downloadingArabic, setDownloadingArabic] = useState(false);
   const [downloadingLatin, setDownloadingLatin] = useState(false);
   const [downloadingOT, setDownloadingOT] = useState(false);
-  const [downloadingNT, setDownloadingNT] = useState(false)
+  const [downloadingNT, setDownloadingNT] = useState(false);
 
   const awaliwassArabic = `${ROOT_URL}pdf/awaliwass-ar.pdf`;
   const awaliwassLatin = `${ROOT_URL}pdf/awaliwass-lat.pdf`;
@@ -135,7 +135,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
             style={[
               globalStyles.tifinaghe,
               styles.title,
-              {alignSelf: 'center', fontSize: 45},
+              {alignSelf: 'center', fontSize: 44},
             ]}>
             taclHit infu
           </Text>
@@ -144,7 +144,6 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
             style={{
               flexDirection: 'row',
               justifyContent: 'space-evenly',
-              marginTop: 10,
             }}>
             <Text style={styles.title}>tachelhit info</Text>
             <Text

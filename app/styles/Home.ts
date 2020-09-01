@@ -6,7 +6,7 @@ export default StyleSheet.create({
     position: 'absolute',
   },
   title: {
-    fontSize: 32,
+    fontSize: 31,
     color: colors.white,
     textShadowColor: '#000',
     textShadowOffset: {width: 1, height: 1},
