@@ -135,7 +135,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
             style={[
               globalStyles.tifinaghe,
               styles.title,
-              {alignSelf: 'center', fontSize: 44},
+              {alignSelf: 'center', fontSize: 44, marginTop: 10},
             ]}>
             taclHit infu
           </Text>
@@ -291,7 +291,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
             <Button
               onPress={openAwalIwass}
               icon={Platform.OS === 'ios' ? 'apple' : 'google-play'}
-              style={{marginHorizontal: 15, marginBottom: 10}}
+              style={{marginHorizontal: 17, marginBottom: 10}}
               uppercase={false}
               labelStyle={styles.buttonLabel}
               mode="contained">
@@ -329,21 +329,20 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                 ) : (
                   <Icon size={17} style={{marginRight: 5}} name="download" />
                 )}
-                <Text style={[{fontSize: 25}, globalStyles.arabic]}>
+                <Text style={[{fontSize: 25}, globalStyles.arabicBold]}>
                   اوال ءي واسّ
                 </Text>
               </TouchableOpacity>
             </View>
 
-            <View style={[styles.textBackground, {marginBottom: 10}]}>
-              <Text
-                style={[
-                  styles.title,
-                  {alignSelf: 'center', color: colors.white, marginTop: 10},
-                ]}>
-                videos
-              </Text>
-            </View>
+            <Text
+              style={[
+                styles.title,
+                {alignSelf: 'center', color: colors.white, marginTop: 13},
+              ]}>
+              videos
+            </Text>
+
             <View style={styles.buttonRow}>
               <Button
                 style={styles.button}
