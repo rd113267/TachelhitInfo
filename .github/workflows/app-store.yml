@@ -3,7 +3,7 @@ name: test-flight
 on:
   push:
     branches: [ master ]
-
+    tags: [ v* ]
 jobs:
   deploy:
     runs-on: macos-latest
