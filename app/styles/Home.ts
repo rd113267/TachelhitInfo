@@ -55,6 +55,6 @@ export default StyleSheet.create({
   arabicTitle: {
     fontSize: 40,
     color: colors.white,
-    marginTop: -7
+    marginTop: -7,
   },
 });
