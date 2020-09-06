@@ -37,7 +37,7 @@ export default StyleSheet.create({
     alignSelf: 'center',
   },
   arabicButton: {
-    backgroundColor: '#fff',
+    backgroundColor: colors.cream,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -60,7 +60,7 @@ export default StyleSheet.create({
   },
   arabicTitle: {
     fontSize: 40,
-    color: '#fff',
+    color: colors.white,
     marginTop: -7
   },
 });
