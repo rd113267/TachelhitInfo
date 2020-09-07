@@ -13,7 +13,6 @@ jobs:
           yarn
       - name: Build android aab
         run: |
-          echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
           cd android
           echo "TACHELHIT_KEY_ALIAS=${{ secrets.TACHELHIT_KEY_ALIAS }}" >> gradle.properties
           echo "TACHELHIT_UPLOAD_STORE_FILE=${{ secrets.TACHELHIT_UPLOAD_STORE_FILE }}" >> gradle.properties
