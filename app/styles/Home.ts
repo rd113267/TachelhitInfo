@@ -47,7 +47,7 @@ export default StyleSheet.create({
     marginVertical: 9,
   },
   videoButtonLabel: {
-    fontSize: 15,
+    fontSize: 14,
     color: colors.black,
     marginHorizontal: 10,
     marginVertical: 8,
