@@ -19,7 +19,7 @@ const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: colors.white,
+    primary: colors.cream,
     accent: colors.black,
   },
 };

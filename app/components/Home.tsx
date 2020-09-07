@@ -171,7 +171,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               </Button>
               <Audio
                 paused={!playing}
-                uri={`${ROOT_URL}mp3-testimonies/ma tssent.mp3`}
+                uri={`${ROOT_URL}mp3-testimonies/ma_tssent.mp3`}
                 onBuffer={({isBuffering}) => setLoading(isBuffering)}
               />
               <Button
@@ -204,7 +204,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               </Button>
               <Audio
                 paused={!playing2}
-                uri={`${ROOT_URL}mp3-testimonies/ssa n-thuna.mp3`}
+                uri={`${ROOT_URL}mp3-testimonies/ssa_n-thuna.mp3`}
                 onBuffer={({isBuffering}) => setLoading2(isBuffering)}
               />
               <Button
@@ -359,15 +359,14 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                 mode="contained">
                 tudert l-lmasih
               </Button>
-              {showJesus && (
-                <Video
-                  source={{uri: JESUS_FILM_URI}}
-                  ref={videoRefJesus}
-                  paused={jesusPaused}
-                  onFullscreenPlayerDidPresent={() => setJesusPaused(false)}
-                  onFullscreenPlayerDidDismiss={() => setJesusPaused(true)}
-                />
-              )}
+              <Video
+                source={{uri: JESUS_FILM_URI}}
+                ref={videoRefJesus}
+                paused={jesusPaused}
+                onFullscreenPlayerDidPresent={() => setJesusPaused(false)}
+                onFullscreenPlayerDidDismiss={() => setJesusPaused(true)}
+              />
+
               <Button
                 style={styles.button}
                 labelStyle={styles.videoButtonLabel}
