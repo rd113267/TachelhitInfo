@@ -4,13 +4,9 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home from './components/Home';
 import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
 import {colors} from './constants';
-import Fidyu from './components/Fidyu';
-import Maylli from './components/Maylli';
 
 export type RootStackParamList = {
   Home: undefined;
-  Fidyu: undefined;
-  Maylli: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -34,28 +30,6 @@ const App = () => {
             component={Home}
             options={({navigation}) => ({
               headerShown: false,
-            })}
-          />
-          <Stack.Screen
-            name="Fidyu"
-            component={Fidyu}
-            options={() => ({
-              headerTitle: '',
-              headerStyle: {backgroundColor: colors.white},
-              headerTitleStyle: {color: colors.black},
-              headerBackTitle: '',
-              headerTintColor: colors.black,
-            })}
-          />
-          <Stack.Screen
-            name="Maylli"
-            component={Maylli}
-            options={() => ({
-              headerTitle: '',
-              headerStyle: {backgroundColor: colors.white},
-              headerTitleStyle: {color: colors.black},
-              headerBackTitle: '',
-              headerTintColor: colors.black,
             })}
           />
         </Stack.Navigator>

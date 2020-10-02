@@ -16,4 +16,7 @@ export const JESUS_FILM_URI = 'https://tachelhit.info/mp4/JESUS.mp4';
 export const MAYLLI_URI =
   'https://www.youtube.com/embed/videoseries?list=PLuAn8llPU4qSMedvpI9jwwEvyFyn-z2jy&autoplay=1&rel=0&autoplay=1';
 
+export const GODS_STORY =
+  'https://tachelhit.info/mp4/Tashelhit-GodsStory-FC-HR-shi.mp4';
+
 export const AMSIGGEL_ID = '106801287';

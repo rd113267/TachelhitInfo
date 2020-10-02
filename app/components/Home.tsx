@@ -15,7 +15,13 @@ import styles from '../styles/Home';
 import {Button, ActivityIndicator} from 'react-native-paper';
 import VideoPlayer from 'react-native-video-controls';
 import Audio from './commons/Audio';
-import {ROOT_URL, AMSIGGEL_ID, JESUS_FILM_URI, colors} from '../constants';
+import {
+  ROOT_URL,
+  AMSIGGEL_ID,
+  JESUS_FILM_URI,
+  colors,
+  GODS_STORY,
+} from '../constants';
 import {
   openWhatsApp,
   getVideoDetails,
@@ -41,12 +47,15 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
 
   const [paused, setPaused] = useState(true);
   const [jesusPaused, setJesusPaused] = useState(true);
+  const [godsStoryPaused, setGodsStoryPaused] = useState(true);
   const [showAmsiggel, setShowAmsiggel] = useState(false);
   const [showJesus, setShowJesus] = useState(false);
+  const [showGodsStory, setShowGodsStory] = useState(false);
 
   const [videoDetails, setVideoDetails] = useState<VideoDetails>();
   const videoRef = useRef<Video>(null);
   const videoRefJesus = useRef<Video>(null);
+  const videoRefGodsStory = useRef<Video>(null);
 
   const [downloadingArabic, setDownloadingArabic] = useState(false);
   const [downloadingLatin, setDownloadingLatin] = useState(false);
@@ -69,14 +78,14 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
   }, []);
 
   useEffect(() => {
-    if (showAmsiggel || showJesus) {
+    if (showAmsiggel || showJesus || showGodsStory) {
       Orientation.lockToLandscape();
       StatusBar.setHidden(true);
     } else {
       Orientation.lockToPortrait();
       StatusBar.setHidden(false);
     }
-  }, [showAmsiggel, showJesus]);
+  }, [showAmsiggel, showJesus, showGodsStory]);
 
   useEffect(() => {
     if (Platform.OS === 'android' && !Orientation.isLocked()) {
@@ -120,6 +129,26 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
         onBack={() => {
           setShowJesus(false);
           setJesusPaused(true);
+        }}
+      />
+    );
+  }
+  if (showGodsStory && Platform.OS === 'android') {
+    return (
+      <VideoPlayer
+        source={{uri: GODS_STORY}}
+        disableVolume
+        disableFullscreen
+        paused={godsStoryPaused}
+        onPause={() => setGodsStoryPaused(true)}
+        onPlay={() => setGodsStoryPaused(false)}
+        onLoad={() => setGodsStoryPaused(false)}
+        onError={(e: Error) =>
+          __DEV__ ? console.warn(e.message) : Alert.alert('Error', e.message)
+        }
+        onBack={() => {
+          setShowGodsStory(false);
+          setGodsStoryPaused(true);
         }}
       />
     );
@@ -366,16 +395,28 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                 onFullscreenPlayerDidPresent={() => setJesusPaused(false)}
                 onFullscreenPlayerDidDismiss={() => setJesusPaused(true)}
               />
-
               <Button
                 style={styles.button}
                 labelStyle={styles.videoButtonLabel}
                 icon="video"
-                onPress={() => navigation.navigate('Maylli')}
+                onPress={() => {
+                  if (Platform.OS === 'ios') {
+                    videoRefGodsStory.current?.presentFullscreenPlayer();
+                  } else {
+                    setShowGodsStory(true);
+                  }
+                }}
                 uppercase={false}
                 mode="contained">
                 maylli iqsad rbbi
               </Button>
+              <Video
+                source={{uri: GODS_STORY}}
+                ref={videoRefGodsStory}
+                paused={godsStoryPaused}
+                onFullscreenPlayerDidPresent={() => setGodsStoryPaused(false)}
+                onFullscreenPlayerDidDismiss={() => setGodsStoryPaused(true)}
+              />
             </View>
             <Button
               style={styles.button}

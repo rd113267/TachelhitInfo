@@ -143,8 +143,8 @@ android {
         applicationId "com.tachelhitinfo"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 15
-        versionName "1.0.3"
+        versionCode 16
+        versionName "1.0.4"
         multiDexEnabled true
     }
     splits {
