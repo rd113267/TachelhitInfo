@@ -29,6 +29,10 @@ export default StyleSheet.create({
     bottom: 10,
     width: 250,
     alignSelf: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 3,
   },
   arabicButton: {
     backgroundColor: colors.cream,
@@ -56,5 +60,16 @@ export default StyleSheet.create({
     fontSize: 40,
     color: colors.white,
     marginTop: -7,
+  },
+  modal: {
+    padding: 20,
+    backgroundColor: colors.red,
+    height: 500,
+    width: '80%',
+    alignSelf: 'center',
+  },
+  book: {
+    fontSize: 25,
+    fontFamily: 'TamazightTifinaghe',
   },
 });

@@ -9,10 +9,17 @@ import {
   StatusBar,
   Linking,
   ScrollView,
+  FlatList,
 } from 'react-native';
 import globalStyles from '../styles/globalStyles';
 import styles from '../styles/Home';
-import {Button, ActivityIndicator} from 'react-native-paper';
+import {
+  Button,
+  ActivityIndicator,
+  Modal,
+  List,
+  Divider,
+} from 'react-native-paper';
 import VideoPlayer from 'react-native-video-controls';
 import Audio from './commons/Audio';
 import {
@@ -21,6 +28,7 @@ import {
   JESUS_FILM_URI,
   colors,
   GODS_STORY,
+  oldTestament,
 } from '../constants';
 import {
   openWhatsApp,
@@ -61,11 +69,17 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
   const [downloadingLatin, setDownloadingLatin] = useState(false);
   const [downloadingOT, setDownloadingOT] = useState(false);
   const [downloadingNT, setDownloadingNT] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [book, setBook] = useState<number>();
+  const [chapter, setChapter] = useState<number>();
+  const [playingBible, setPlayingBible] = useState(false);
+  const [bibleBuffering, setBibleBuffering] = useState(false);
 
   const awaliwassArabic = `${ROOT_URL}pdf/awaliwass-ar.pdf`;
   const awaliwassLatin = `${ROOT_URL}pdf/awaliwass-lat.pdf`;
   const latinOT = `${ROOT_URL}pdf/laahd aqdim.pdf`;
   const latinNT = `${ROOT_URL}pdf/laahd l-ljdid.pdf`;
+  const bibleURL = `https://raw.githubusercontent.com/moulie415/WordOfGodForEachDay/master/files/bible/${book}/${chapter}.mp3`;
 
   useEffect(() => {
     const getDetails = async () => {
@@ -159,7 +173,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
       resizeMode="cover"
       source={require('../images/background.png')}>
       <SafeAreaView>
-        <ScrollView>
+        <ScrollView contentContainerStyle={{paddingBottom: 60}}>
           <Text
             style={[
               globalStyles.tifinaghe,
@@ -269,8 +283,8 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               <Button
                 style={styles.button}
                 labelStyle={styles.buttonLabel}
-                icon="open-in-new"
-                onPress={() => Alert.alert('Coming soon')}
+                icon="headphones"
+                onPress={() => setModalVisible(true)}
                 uppercase={false}
                 mode="contained">
                 laahd aqdim
@@ -454,6 +468,70 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
         mode="contained">
         sawl-agh-d s-watsapp
       </Button>
+      <Modal
+        visible={modalVisible}
+        onDismiss={() => setModalVisible(false)}
+        contentContainerStyle={styles.modal}>
+        <FlatList
+          data={Object.keys(oldTestament)}
+          ItemSeparatorComponent={() => <Divider />}
+          keyExtractor={(item) => item}
+          renderItem={({item}) => {
+            return (
+              <List.Accordion
+                style={{
+                  backgroundColor: colors.cream,
+                }}
+                titleStyle={styles.book}
+                title={oldTestament[Number(item)].name}>
+                <FlatList
+                  ItemSeparatorComponent={() => <Divider />}
+                  data={oldTestament[Number(item)].chapters}
+                  keyExtractor={(item) => item.toString()}
+                  renderItem={({item: c, index}) => {
+                    return (
+                      <List.Item
+                        style={{backgroundColor: colors.cream}}
+                        right={(props) =>
+                          bibleBuffering ? (
+                            <ActivityIndicator size="small" />
+                          ) : (
+                            <List.Icon
+                              {...props}
+                              icon={
+                                Number(item) === book &&
+                                index + 1 === chapter &&
+                                playingBible
+                                  ? 'pause'
+                                  : 'play'
+                              }
+                            />
+                          )
+                        }
+                        title={c}
+                        onPress={() => {
+                          if (Number(item) === book && index + 1 === chapter) {
+                            setPlayingBible(false);
+                          } else {
+                            setChapter(index + 1);
+                            setBook(Number(item));
+                            setPlayingBible(true);
+                          }
+                        }}
+                      />
+                    );
+                  }}
+                />
+              </List.Accordion>
+            );
+          }}
+        />
+      </Modal>
+      <Audio
+        paused={!playingBible}
+        uri={bibleURL}
+        onBuffer={({isBuffering}) => setBibleBuffering(isBuffering)}
+      />
     </ImageBackground>
   );
 };
