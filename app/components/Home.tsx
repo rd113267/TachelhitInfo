@@ -80,6 +80,9 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
   const latinOT = `${ROOT_URL}pdf/laahd aqdim.pdf`;
   const latinNT = `${ROOT_URL}pdf/laahd l-ljdid.pdf`;
   const bibleURL = `https://raw.githubusercontent.com/moulie415/WordOfGodForEachDay/master/files/bible/${book}/${chapter}.mp3`;
+  const [expandedBooks, setExpandedBooks] = useState<{[book: number]: boolean}>(
+    {},
+  );
 
   useEffect(() => {
     const getDetails = async () => {
@@ -366,14 +369,14 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                   <ActivityIndicator
                     color="#000"
                     animating
-                    size={17}
+                    size={15}
                     style={{marginRight: 5}}
                   />
                 ) : (
-                  <Icon size={17} style={{marginRight: 5}} name="download" />
+                  <Icon size={15} style={{marginRight: 5}} name="download" />
                 )}
-                <Text style={[{fontSize: 25}, globalStyles.arabicBold]}>
-                  اوال ءي واسّ
+                <Text style={[{fontSize: 28}, globalStyles.arabic]}>
+                  اوال ءي-واسّ
                 </Text>
               </TouchableOpacity>
             </View>
@@ -486,12 +489,34 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                   backgroundColor: colors.cream,
                 }}
                 titleStyle={styles.book}
+                expanded={expandedBooks[Number(item)]}
+                onPress={() => {
+                  setExpandedBooks({
+                    ...expandedBooks,
+                    [Number(item)]: !expandedBooks[Number(item)],
+                  });
+                }}
                 title={oldTestament[Number(item)].name}>
                 <FlatList
                   ItemSeparatorComponent={() => <Divider />}
-                  data={oldTestament[Number(item)].chapters}
+                  data={[...oldTestament[Number(item)].chapters, 'last']}
                   keyExtractor={(item) => item.toString()}
                   renderItem={({item: c, index}) => {
+                    if (c === 'last') {
+                      return (
+                        <List.Item
+                          style={{backgroundColor: colors.cream, padding: 0}}
+                          title=""
+                          right={(props) => <List.Icon icon="chevron-up" />}
+                          onPress={() => {
+                            setExpandedBooks({
+                              ...expandedBooks,
+                              [Number(item)]: !expandedBooks[Number(item)],
+                            });
+                          }}
+                        />
+                      );
+                    }
                     return (
                       <List.Item
                         style={{backgroundColor: colors.cream}}

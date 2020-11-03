@@ -38,7 +38,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>tachelhit info needs access to your photo library</string>
 	<key>UIAppFonts</key>
@@ -64,6 +64,8 @@
 		<string>ScheherazadeOTM2A-Regular.ttf</string>
 		<string>ScheherazadeOTM2A.ttf</string>
 		<string>Scheherazade-Bold.ttf</string>
+		<string>DoulosSILR.ttf</string>
+		<string>Doulos SIL.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

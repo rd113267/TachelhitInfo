@@ -69,7 +69,7 @@ export default StyleSheet.create({
     alignSelf: 'center',
   },
   book: {
-    fontSize: 25,
-    fontFamily: 'TamazightTifinaghe',
+    fontSize: 18,
+    fontFamily: 'Doulos SIL',
   },
 });
