@@ -470,7 +470,10 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
       </Button>
       <Modal
         visible={modalVisible}
-        onDismiss={() => setModalVisible(false)}
+        onDismiss={() => {
+          setModalVisible(false);
+          setPlayingBible(false);
+        }}
         contentContainerStyle={styles.modal}>
         <FlatList
           data={Object.keys(oldTestament)}
@@ -511,7 +514,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                         title={c}
                         onPress={() => {
                           if (Number(item) === book && index + 1 === chapter) {
-                            setPlayingBible(false);
+                            setPlayingBible(!playingBible);
                           } else {
                             setChapter(index + 1);
                             setBook(Number(item));
@@ -531,6 +534,24 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
         paused={!playingBible}
         uri={bibleURL}
         onBuffer={({isBuffering}) => setBibleBuffering(isBuffering)}
+        onEnd={() => {
+          if (
+            chapter &&
+            book &&
+            oldTestament[book].chapters[chapter - 1] ===
+              oldTestament[book].chapters.pop()
+          ) {
+            if (book === Number(Object.keys(oldTestament).pop())) {
+              setBook(1);
+              setChapter(1);
+            } else if (book) {
+              setBook(book + 1);
+              setChapter(1);
+            }
+          } else if (chapter) {
+            setChapter(chapter + 1);
+          }
+        }}
       />
     </ImageBackground>
   );
