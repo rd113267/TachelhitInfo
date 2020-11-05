@@ -218,7 +218,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               </Button>
               <Audio
                 paused={!playing}
-                uri={`${ROOT_URL}mp3-testimonies/ma_tssent.mp3`}
+                uri={`${ROOT_URL}wimpy/ma tssent.mp3`}
                 onBuffer={({isBuffering}) => setLoading(isBuffering)}
               />
               <Button
@@ -251,7 +251,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               </Button>
               <Audio
                 paused={!playing2}
-                uri={`${ROOT_URL}mp3-testimonies/ssa_n-thuna.mp3`}
+                uri={`${ROOT_URL}wimpy/ssa n-thuna.mp3`}
                 onBuffer={({isBuffering}) => setLoading2(isBuffering)}
               />
               <Button
