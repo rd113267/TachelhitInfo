@@ -70,6 +70,6 @@ export default StyleSheet.create({
   },
   book: {
     fontSize: 18,
-    fontFamily: 'Doulos SIL',
+    fontFamily: 'Tashelhayt SILDoulos',
   },
 });

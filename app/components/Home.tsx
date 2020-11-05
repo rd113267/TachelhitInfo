@@ -83,6 +83,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
   const [expandedBooks, setExpandedBooks] = useState<{[book: number]: boolean}>(
     {},
   );
+  const booksList = useRef<FlatList>(null);
 
   useEffect(() => {
     const getDetails = async () => {
@@ -482,7 +483,8 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
           data={Object.keys(oldTestament)}
           ItemSeparatorComponent={() => <Divider />}
           keyExtractor={(item) => item}
-          renderItem={({item}) => {
+          ref={booksList}
+          renderItem={({item, index: bookIndex}) => {
             return (
               <List.Accordion
                 style={{
@@ -513,6 +515,11 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
                               ...expandedBooks,
                               [Number(item)]: !expandedBooks[Number(item)],
                             });
+                            setTimeout(() => {
+                              booksList.current?.scrollToIndex({
+                                index: bookIndex,
+                              });
+                            }, 100);
                           }}
                         />
                       );
