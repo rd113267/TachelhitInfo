@@ -29,6 +29,7 @@ import {
   colors,
   GODS_STORY,
   oldTestament,
+  AZUZD,
 } from '../constants';
 import {
   openWhatsApp,
@@ -266,7 +267,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               </Button>
               <Audio
                 paused={!playing3}
-                uri={`${ROOT_URL}azuzd_combined.mp3`}
+                uri={AZUZD}
                 onBuffer={({isBuffering}) => setLoading3(isBuffering)}
               />
             </View>
