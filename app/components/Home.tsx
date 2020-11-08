@@ -30,6 +30,9 @@ import {
   GODS_STORY,
   oldTestament,
   AZUZD,
+  MATSSENT,
+  ISEQSITN,
+  NTHUNA,
 } from '../constants';
 import {
   openWhatsApp,
@@ -219,7 +222,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               </Button>
               <Audio
                 paused={!playing}
-                uri={`${ROOT_URL}wimpy/ma tssent.mp3`}
+                uri={MATSSENT}
                 onBuffer={({isBuffering}) => setLoading(isBuffering)}
               />
               <Button
@@ -234,7 +237,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               </Button>
               <Audio
                 paused={!playing1}
-                uri={`${ROOT_URL}Iseqsitn.mp3`}
+                uri={ISEQSITN}
                 onBuffer={({isBuffering}) => setLoading1(isBuffering)}
               />
             </View>
@@ -252,7 +255,7 @@ const Home: FunctionComponent<HomeProps> = ({navigation}) => {
               </Button>
               <Audio
                 paused={!playing2}
-                uri={`${ROOT_URL}wimpy/ssa n-thuna.mp3`}
+                uri={NTHUNA}
                 onBuffer={({isBuffering}) => setLoading2(isBuffering)}
               />
               <Button
