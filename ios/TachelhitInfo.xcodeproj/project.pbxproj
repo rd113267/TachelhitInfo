@@ -10,6 +10,8 @@
 		00E356F31AD99517003FC87E /* TachelhitInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TachelhitInfoTests.m */; };
 		0A046C9B24F856C300F1EF43 /* TamazightTifinaghe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C31C69DD85BA42C2B60924E5 /* TamazightTifinaghe.ttf */; };
 		0A046C9D24F856C300F1EF43 /* ScheherazadeOTM2A-Regular.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 8D502496FDB449589005D2C2 /* ScheherazadeOTM2A-Regular.TTF */; };
+		0A04832827B96C9900ACD9FB /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A04832727B96C9900ACD9FB /* File.swift */; };
+		0A04832A27B96CED00ACD9FB /* LinkPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A04832927B96CED00ACD9FB /* LinkPresentation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0A300ACB24E87EAD004E715D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A300ACA24E87EAD004E715D /* GoogleService-Info.plist */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -19,13 +21,11 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* TachelhitInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TachelhitInfoTests.m */; };
+		4B7225C870DA46718398790E /* Tashelhayt SILDoulos.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FED3D515B244080996B09FB /* Tashelhayt SILDoulos.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		855327F02CBD4E72B1A464C0 /* Scheherazade-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3A3D04FD947421AB5D8436C /* Scheherazade-Bold.ttf */; };
 		A720EA8C76FBFC4E35CC5BD5 /* libPods-TachelhitInfo-TachelhitInfoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5319AEF58B304CFD5D1CCBB /* libPods-TachelhitInfo-TachelhitInfoTests.a */; };
 		B7562ED4FB6E2BB5F580F0F2 /* libPods-TachelhitInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32BF948C6253F1CF181B3B69 /* libPods-TachelhitInfo.a */; };
-		5F7E25C5CB924D428E1A6ACD /* DoulosSILR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0F1761C8C594228AFA53FA5 /* DoulosSILR.ttf */; };
-		F32E97177A3A420B8CEF7A2F /* Doulos SIL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E1E4C192CE84A9D8A390644 /* Doulos SIL.ttf */; };
-		4B7225C870DA46718398790E /* Tashelhayt SILDoulos.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FED3D515B244080996B09FB /* Tashelhayt SILDoulos.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +50,9 @@
 		00E356EE1AD99517003FC87E /* TachelhitInfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TachelhitInfoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* TachelhitInfoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TachelhitInfoTests.m; sourceTree = "<group>"; };
+		0A04832627B96C9900ACD9FB /* TachelhitInfo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TachelhitInfo-Bridging-Header.h"; sourceTree = "<group>"; };
+		0A04832727B96C9900ACD9FB /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		0A04832927B96CED00ACD9FB /* LinkPresentation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LinkPresentation.framework; path = System/Library/Frameworks/LinkPresentation.framework; sourceTree = SDKROOT; };
 		0A300AC624E5DB35004E715D /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		0A300AC724E5DB35004E715D /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		0A300ACA24E87EAD004E715D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		2D02E47B1E0B4A5D006451C7 /* TachelhitInfo-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TachelhitInfo-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* TachelhitInfo-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TachelhitInfo-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA50974CB2E46EFA830016F /* ScheherazadeOTM2A-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ScheherazadeOTM2A-Regular.ttf"; path = "../assets/fonts/ScheherazadeOTM2A-Regular.ttf"; sourceTree = "<group>"; };
+		2FED3D515B244080996B09FB /* Tashelhayt SILDoulos.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Tashelhayt SILDoulos.ttf"; path = "../assets/fonts/Tashelhayt SILDoulos.ttf"; sourceTree = "<group>"; };
 		32BF948C6253F1CF181B3B69 /* libPods-TachelhitInfo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TachelhitInfo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36643663C38249B291D2F002 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		3DF599A9B14F45F0B3045346 /* TraditionalArabic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = TraditionalArabic.ttf; path = ../assets/fonts/TraditionalArabic.ttf; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 		88BAE303C07243BA9EC58327 /* ScheherazadeOTM2A.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ScheherazadeOTM2A.ttf; path = ../assets/fonts/ScheherazadeOTM2A.ttf; sourceTree = "<group>"; };
 		8B38BA6435864683A84FA05F /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		8D502496FDB449589005D2C2 /* ScheherazadeOTM2A-Regular.TTF */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ScheherazadeOTM2A-Regular.TTF"; path = "../assets/fonts/ScheherazadeOTM2A-Regular.TTF"; sourceTree = "<group>"; };
+		8E1E4C192CE84A9D8A390644 /* Doulos SIL.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Doulos SIL.ttf"; path = "../assets/fonts/Doulos SIL.ttf"; sourceTree = "<group>"; };
 		943B9DE58DA64F159F1C0CE9 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		A0C892C209DC430B84D2C936 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		B2B5D093716B41D5A038D8CA /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
@@ -86,13 +91,11 @@
 		CBC7D6D24D6B4F3AA54EE9CD /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		DC0FB8DF38AE4ECF81A8FAAA /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		E065BE176DF6F29E0CB7146E /* Pods-TachelhitInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TachelhitInfo.debug.xcconfig"; path = "Target Support Files/Pods-TachelhitInfo/Pods-TachelhitInfo.debug.xcconfig"; sourceTree = "<group>"; };
+		E0F1761C8C594228AFA53FA5 /* DoulosSILR.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = DoulosSILR.ttf; path = ../assets/fonts/DoulosSILR.ttf; sourceTree = "<group>"; };
 		EC656AE2E2AF4003A8843B9A /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F1A2958304624803A416F6C9 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
-		E0F1761C8C594228AFA53FA5 /* DoulosSILR.ttf */ = {isa = PBXFileReference; name = "DoulosSILR.ttf"; path = "../assets/fonts/DoulosSILR.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8E1E4C192CE84A9D8A390644 /* Doulos SIL.ttf */ = {isa = PBXFileReference; name = "Doulos SIL.ttf"; path = "../assets/fonts/Doulos SIL.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2FED3D515B244080996B09FB /* Tashelhayt SILDoulos.ttf */ = {isa = PBXFileReference; name = "Tashelhayt SILDoulos.ttf"; path = "../assets/fonts/Tashelhayt SILDoulos.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A04832A27B96CED00ACD9FB /* LinkPresentation.framework in Frameworks */,
 				B7562ED4FB6E2BB5F580F0F2 /* libPods-TachelhitInfo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +178,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A04832927B96CED00ACD9FB /* LinkPresentation.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				32BF948C6253F1CF181B3B69 /* libPods-TachelhitInfo.a */,
@@ -192,6 +197,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				0A04832727B96C9900ACD9FB /* File.swift */,
 				0A300ACA24E87EAD004E715D /* GoogleService-Info.plist */,
 				0A300AC624E5DB35004E715D /* MaterialCommunityIcons.ttf */,
 				0A300AC724E5DB35004E715D /* MaterialIcons.ttf */,
@@ -202,6 +208,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				1CF6BE0C3821DAC51E69DF98 /* Pods */,
 				D02414D6FD794B85B8328030 /* Resources */,
+				0A04832627B96C9900ACD9FB /* TachelhitInfo-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -261,6 +268,7 @@
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
 				4CF5FE970B71388147B6EAD9 /* [CP] Copy Pods Resources */,
+				E1D90D2A65418F1EE5D0566C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,6 +293,7 @@
 				B80E614C68087E04F7F1C966 /* [CP] Copy Pods Resources */,
 				A86A01F5733A93A1FFA9722F /* [CP-User] [RNFB] Core Configuration */,
 				1C9C908B4A997C97038960D7 /* [CP-User] [RNFB] Crashlytics Configuration */,
+				8A6CE6F82AF4E456B48751BC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -346,7 +355,7 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 27RJG57PEM;
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1320;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -399,8 +408,6 @@
 				0A300ACB24E87EAD004E715D /* GoogleService-Info.plist in Resources */,
 				18042B58F9414A9F942BD9AD /* ScheherazadeOTM2A.ttf in Resources */,
 				855327F02CBD4E72B1A464C0 /* Scheherazade-Bold.ttf in Resources */,
-				5F7E25C5CB924D428E1A6ACD /* DoulosSILR.ttf in Resources */,
-				F32E97177A3A420B8CEF7A2F /* Doulos SIL.ttf in Resources */,
 				4B7225C870DA46718398790E /* Tashelhayt SILDoulos.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,6 +562,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8A6CE6F82AF4E456B48751BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TachelhitInfo/Pods-TachelhitInfo-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TachelhitInfo/Pods-TachelhitInfo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A86A01F5733A93A1FFA9722F /* [CP-User] [RNFB] Core Configuration */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -615,6 +640,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TachelhitInfo/Pods-TachelhitInfo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E1D90D2A65418F1EE5D0566C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TachelhitInfo-TachelhitInfoTests/Pods-TachelhitInfo-TachelhitInfoTests-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TachelhitInfo-TachelhitInfoTests/Pods-TachelhitInfo-TachelhitInfoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -669,6 +712,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				0A04832827B96C9900ACD9FB /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -710,6 +754,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 50B58D66C874EBC5DDE45594 /* Pods-TachelhitInfo-TachelhitInfoTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -733,6 +778,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6AEA9E8B70ACCA4C9D86A3EE /* Pods-TachelhitInfo-TachelhitInfoTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = TachelhitInfoTests/Info.plist;
@@ -768,6 +814,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tachelhitinfo;
 				PRODUCT_NAME = "tachelhit info";
+				SWIFT_OBJC_BRIDGING_HEADER = "TachelhitInfo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -796,6 +843,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tachelhitinfo;
 				PRODUCT_NAME = "tachelhit info";
 				PROVISIONING_PROFILE_SPECIFIER = "tachelhit info";
+				SWIFT_OBJC_BRIDGING_HEADER = "TachelhitInfo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
