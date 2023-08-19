@@ -21,6 +21,7 @@ export const downloadLink = async (
       });
     } else {
       await request(PERMISSIONS.ANDROID.WRITE_EXTERNAL_STORAGE);
+
       const res = await RNFetchBlob.config({
         addAndroidDownloads: {
           notification: true,
