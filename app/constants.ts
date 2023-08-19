@@ -9,8 +9,7 @@ export const colors = {
 
 export const ROOT_URL = 'https://www.tachelhit.info/';
 
-export const JESUS_FILM_URI =
-  'https://bcbolt446c5271-a.akamaihd.net/media/v1/pmp4/static/clear/1226740748001/aa954f92-599d-4e4b-997b-a7c439819a29/aef287a9-ed69-40af-ab61-aaa11b41b2c1/main.mp4?akamai_token=exp=1692489078~acl=/media/v1/pmp4/static/clear/1226740748001/aa954f92-599d-4e4b-997b-a7c439819a29/aef287a9-ed69-40af-ab61-aaa11b41b2c1/main.mp4*~hmac=6643506ba0a2f4802aa5a6e51185db92cbf831c1c15889511d9408dcaf235134';
+export const JESUS_FILM_URI = 'https://tachelhit.info/assets/JESUS.mp4';
 
 export const GODS_STORY = 'https://www.amsiggel.com/videos/Gods_story.mp4';
 
