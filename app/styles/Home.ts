@@ -9,7 +9,7 @@ export default StyleSheet.create({
     fontSize: 30,
     color: colors.white,
     textShadowColor: '#000',
-    // textShadowOffset: {width: 1, height: 1},
+    textShadowOffset: {width: 1, height: 1},
     textShadowRadius: 3,
     elevation: 10,
   },
