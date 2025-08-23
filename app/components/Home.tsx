@@ -2,7 +2,6 @@ import React, {useState, useRef, useEffect, FunctionComponent} from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
   ImageBackground,
   Platform,
   Alert,
@@ -20,6 +19,7 @@ import {
   List,
   Divider,
 } from 'react-native-paper';
+// @ts-ignore
 import VideoPlayer from 'react-native-video-controls';
 import Audio from './commons/Audio';
 import {
@@ -39,7 +39,8 @@ import Video from 'react-native-video';
 import HomeProps from '../types/Home';
 import Orientation from 'react-native-orientation-locker';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from '@react-native-vector-icons/material-design-icons';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Home: FunctionComponent<HomeProps> = ({navigation}) => {
   const [playing, setPlaying] = useState(false);

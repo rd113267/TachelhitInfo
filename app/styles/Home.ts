@@ -32,7 +32,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 3,
+    borderRadius: 20,
   },
   arabicButton: {
     backgroundColor: colors.cream,
@@ -41,19 +41,19 @@ export default StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 10,
     paddingVertical: 0,
-    borderRadius: 3,
+    borderRadius: 20,
     minWidth: 180,
   },
   buttonLabel: {
     fontSize: 14,
     color: colors.black,
-    marginHorizontal: 10,
+    marginHorizontal: 20,
     marginVertical: 9,
   },
   videoButtonLabel: {
     fontSize: 14,
     color: colors.black,
-    marginHorizontal: 10,
+    marginHorizontal: 20,
     marginVertical: 8,
   },
   arabicTitle: {
